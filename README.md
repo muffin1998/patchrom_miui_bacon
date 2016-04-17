@@ -1,0 +1,2 @@
+# patchrom_miui_bacon
+base on cm11-XNF9XBS28K
