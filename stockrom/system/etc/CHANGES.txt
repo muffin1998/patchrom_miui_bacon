@@ -1,0 +1,6 @@
+    * android
+abb7e33 manifest: Default revision for stable/11.0-XNF9X
+
+    * kernel/oneplus/msm8974
+5018c4b msm8974-oppo: Adjust persistent RAM address
+
