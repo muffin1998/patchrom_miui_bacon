@@ -1,5 +1,4 @@
-# patchrom_miui_bacon
-ptchrom miui for bacon base on cm11-XNF9XBS28K
+                                  ptchrom miui for bacon base on cm11-XNF9XBS28K
 ============================================================================
 This is the first version and fix stuck at Phone and SystemUI FC<br />
 Can boot system<br />
