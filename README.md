@@ -2,6 +2,7 @@
 ============================================================================
 This is the first version and fix stuck at Phone and SystemUI FC<br />
 Can boot system<br />
+########NEWEST VERSION NOT UPLOAD YET#######
 Known BUGs:<br />
 	#BaseBand(fixed)<br />
 	#Camera(fixed)<br />
