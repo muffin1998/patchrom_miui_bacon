@@ -3,9 +3,12 @@
 This is the first version and fix stuck at Phone and SystemUI FC<br />
 Can boot system<br />
 BUGs:<br />
-	BaseBand(May not really a BUG(flash miui rom from oxygen rom))<br />
-	Camera<br />
-	Wifi<br />
-	FlashLight<br />
-	Call and Mms(Not test yet)<br />
+	#BaseBand(fixed)<br />
+	#Camera(fixed)<br />
+	#Wifi(fixed)<br />
+	#FlashLight(fixed)<br />
+	#Mms(fixed)<br />
+        Incoming call<br />
+        PackageInstaller<br />
+        VolumePanel<br />
 	and more ..<br />
