@@ -2,13 +2,16 @@
 ============================================================================
 This is the first version and fix stuck at Phone and SystemUI FC<br />
 Can boot system<br />
-BUGs:<br />
+Known BUGs:<br />
 	#BaseBand(fixed)<br />
 	#Camera(fixed)<br />
 	#Wifi(fixed)<br />
 	#FlashLight(fixed)<br />
 	#Mms(fixed)<br />
-        Incoming call<br />
-        PackageInstaller<br />
-        VolumePanel<br />
-	and more ..<br />
+        #Incoming call(fixed)<br />
+        PackageInstaller(For some Apps)<br />
+        #VolumePanel(fixed)<br />
+        Couldn't open RecentApp Panel and Home Key couldn't back to home<br />
+        LockScreen Not Work<br />
+	...<br />
+	you tell me<br />
