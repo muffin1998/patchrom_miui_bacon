@@ -22,6 +22,7 @@ system/bin/id|system/bin/toolbox
 system/bin/ifconfig|system/bin/toolbox
 system/bin/iftop|system/bin/toolbox
 system/bin/insmod|system/bin/toolbox
+system/bin/install-recovery.sh|system/etc/install-recovery.sh
 system/bin/ioctl|system/bin/toolbox
 system/bin/ionice|system/bin/toolbox
 system/bin/kill|system/bin/toolbox

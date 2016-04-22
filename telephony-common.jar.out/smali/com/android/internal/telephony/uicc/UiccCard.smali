@@ -509,7 +509,7 @@
 
     move-result-object v10
 
-    invoke-direct {p0, v10}, Lcom/android/internal/telephony/uicc/UiccCard;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v10}, Lcom/android/internal/telephony/uicc/UiccCard;->log(Ljava/lang/String;)V
 
     const-string v10, "android.permission.READ_PHONE_STATE"
 

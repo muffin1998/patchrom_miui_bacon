@@ -1415,10 +1415,6 @@
 
     move-result-wide v1
 
-    invoke-static {p1, p2}, Landroid/media/MiniThumbFile$Injector;->getPosition(J)J
-
-    move-result-wide v1
-
     .line 305
     .local v1, "pos":J
     cmp-long v0, v1, v9
@@ -1440,6 +1436,10 @@
     const-wide/16 v3, 0x2710
 
     mul-long/2addr v1, v3
+
+    invoke-static {p1, p2}, Landroid/media/MiniThumbFile$Injector;->getPosition(J)J
+
+    move-result-wide v1
 
     const/4 v7, 0x0
 
@@ -1750,7 +1750,7 @@
 	
     invoke-static/range {p1 .. p2}, Landroid/media/MiniThumbFile$Injector;->getPosition(J)J
 
-    move-result-wide v3
+    move-result-wide v4
 
     .line 402
     const/4 v12, 0x0
@@ -2128,10 +2128,6 @@
 
     move-result-wide v1
 
-    invoke-static {p2, p3}, Landroid/media/MiniThumbFile$Injector;->getPosition(J)J
-    
-    move-result-wide v1
-
     .line 348
     .local v1, "pos":J
     const-wide/16 v3, 0x0
@@ -2144,6 +2140,10 @@
     const-wide/16 v3, 0x2710
 
     mul-long/2addr v1, v3
+   
+    invoke-static {p2, p3}, Landroid/media/MiniThumbFile$Injector;->getPosition(J)J
+    
+    move-result-wide v1
 
     .line 351
     const/4 v7, 0x0

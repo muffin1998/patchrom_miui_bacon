@@ -24,12 +24,13 @@ local-miui-modified-apps :=
 # All vendor apks needed
 local-phone-apps := Camera2 Bluetooth HTMLViewer KeyChain LatinIME NfcNci PacProcessor \
         UserDictionaryProvider WAPPushManager ConfigPanel CertInstaller qcrilmsgtunnel QuickBoot \
-	Stk TimeService PrintSpooler DocumentsUI BluetoothExt
+	Stk TimeService PrintSpooler DocumentsUI BluetoothExt BasicDreams Galaxy4 LiveWallpapers \
+	MagicSmokeWallpapers VisualizationWallpapers
 
 local-phone-priv-apps := BackupRestoreConfirmation DefaultContainerService FusedLocation \
         ExternalStorageProvider InputDevices ProxyHandler SharedStorageBackup Shell TagGoogle \
         VpnDialogs com.qualcomm.location SettingsProvider MediaProvider ThemesProvider \
-        DownloadProvider PicoTts Shell WallpaperCropper 
+        DownloadProvider Shell WallpaperCropper 
 
 local-density := XXHDPI
 
@@ -52,11 +53,21 @@ include $(PORT_BUILD)/porting.mk
 
 #Some Fix
 local-pre-zip-misc:
-		#rm stockrom fonts
-		rm -rf $(ZIP_DIR)/system/fonts/*
-		#copy files
+		#fix fonts
+		cp -a -f other/system/etc/fallback_fonts.xml $(ZIP_DIR)/system/etc/fallback_fonts.xml
+		cp -a -f other/system/etc/system_fonts.xml $(ZIP_DIR)/system/etc/system_fonts.xml
+		#use patched boot.img
 		cp other/boot.img $(ZIP_DIR)/boot.img
-		cp -a -rf other/system/* $(ZIP_DIR)/system/
+		#fix base
+		cp other/emmc_appsboot.mbn $(ZIP_DIR)/emmc_appsboot.mbn
+		cp other/file_contexts $(ZIP_DIR)/file_contexts
+		cp other/logo.bin $(ZIP_DIR)/logo.bin
+		cp other/NON-HLOS.bin $(ZIP_DIR)/NON-HLOS.bin
+		cp other/rpm.mbn $(ZIP_DIR)/rpm.mbn
+		cp other/sbl1.mbn $(ZIP_DIR)/sbl1.mbn
+		cp other/sdi.mbn $(ZIP_DIR)/sdi.mbn
+		cp other/static_nvbk.bin $(ZIP_DIR)/static_nvbk.bin
+		cp other/tz.mbn $(ZIP_DIR)/tz.mbn
 		#fix selinux
 		sed -i '4asetenforce 0' $(ZIP_DIR)/system/bin/sysinit
 		#fix mdnsd
