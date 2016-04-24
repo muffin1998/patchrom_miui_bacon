@@ -2,3 +2,4 @@
 .delete-zip-file-when-clean
 /out*
 releasetools.pyc
+/temp*
