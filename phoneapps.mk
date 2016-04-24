@@ -6,13 +6,12 @@ private-phone-apps := BasicDreams \
 		BluetoothExt \
 		CameraNext \
 		CertInstaller \
-		ConfigPanel \
 		DocumentsUI \
 		Galaxy4 \
 		HoloSpiralWallpaper \
 		HTMLViewer \
 		KeyChain \
-		LatinIME \
+		GooglePinyinIME \
 		LiveWallpapers \
 		MagicSmokeWallpapers \
 		NfcNci \
