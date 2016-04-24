@@ -1619,7 +1619,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v8, v9}, Lcom/android/internal/widget/LockPatternUtils;->patternToHash(Ljava/util/List;)[B
+    invoke-static {v9}, Lcom/android/internal/widget/LockPatternUtils;->patternToHash(Ljava/util/List;)[B
 
     move-result-object v2
 
@@ -2147,7 +2147,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Lcom/android/internal/widget/LockPatternUtils;->patternToHash(Ljava/util/List;)[B
+    invoke-static {v3}, Lcom/android/internal/widget/LockPatternUtils;->patternToHash(Ljava/util/List;)[B
 
     move-result-object v1
 
