@@ -638,11 +638,9 @@
 
     move-result v4
 
-    .line 199
     .restart local v4    # "_result":Z
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 200
     if-eqz v4, :cond_6
 
     move v7, v6
@@ -652,13 +650,13 @@
 
     goto/16 :goto_0
 
-    .line 205
     .end local v0    # "_arg0":I
     .end local v4    # "_result":Z
-    :sswitch_e
-    const-string v7, "com.android.internal.widget.ILockSettings"
 
-    invoke-virtual {p2, v7}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    :sswitch_miui_0
+    const-string v8, "com.android.internal.widget.ILockSettings"
+
+    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 	
 	invoke-virtual {p2}, Landroid/os/Parcel;->createByteArray()[B
 
@@ -696,7 +694,7 @@
         0xb -> :sswitch_b
         0xc -> :sswitch_c
         0xd -> :sswitch_d
-        0xe -> :sswitch_e
+        0xe -> :sswitch_miui_0
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method
