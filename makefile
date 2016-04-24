@@ -22,15 +22,9 @@ local-miui-removed-apps :=
 local-miui-modified-apps := 
 
 # All vendor apks needed
-local-phone-apps := Camera2 Bluetooth HTMLViewer KeyChain LatinIME NfcNci PacProcessor \
-        UserDictionaryProvider WAPPushManager ConfigPanel CertInstaller qcrilmsgtunnel QuickBoot \
-	Stk TimeService PrintSpooler DocumentsUI BluetoothExt BasicDreams Galaxy4 LiveWallpapers \
-	MagicSmokeWallpapers VisualizationWallpapers
+local-phone-apps := 
 
-local-phone-priv-apps := BackupRestoreConfirmation DefaultContainerService FusedLocation \
-        ExternalStorageProvider InputDevices ProxyHandler SharedStorageBackup Shell TagGoogle \
-        VpnDialogs com.qualcomm.location SettingsProvider MediaProvider ThemesProvider \
-        DownloadProvider Shell WallpaperCropper 
+local-phone-priv-apps := 
 
 local-density := XXHDPI
 
@@ -46,6 +40,8 @@ PORT_PRODUCT := bacon
 local-pre-zip := local-pre-zip-misc
 local-after-zip:= 
 
+include phoneapps.mk
+
 # The local targets after the zip file is generated, could include 'zip2sd' to 
 # deliver the zip file to phone, or to customize other actions
 
@@ -56,22 +52,10 @@ local-pre-zip-misc:
 		#fix fonts
 		cp -a -f other/system/etc/fallback_fonts.xml $(ZIP_DIR)/system/etc/fallback_fonts.xml
 		cp -a -f other/system/etc/system_fonts.xml $(ZIP_DIR)/system/etc/system_fonts.xml
+                #some change
+		echo "debug.sf.hw=1" >> $(ZIP_DIR)/system/build.prop
 		#use patched boot.img
 		cp other/boot.img $(ZIP_DIR)/boot.img
-		#fix base
-		cp other/emmc_appsboot.mbn $(ZIP_DIR)/emmc_appsboot.mbn
-		cp other/file_contexts $(ZIP_DIR)/file_contexts
-		cp other/logo.bin $(ZIP_DIR)/logo.bin
-		cp other/NON-HLOS.bin $(ZIP_DIR)/NON-HLOS.bin
-		cp other/rpm.mbn $(ZIP_DIR)/rpm.mbn
-		cp other/sbl1.mbn $(ZIP_DIR)/sbl1.mbn
-		cp other/sdi.mbn $(ZIP_DIR)/sdi.mbn
-		cp other/static_nvbk.bin $(ZIP_DIR)/static_nvbk.bin
-		cp other/tz.mbn $(ZIP_DIR)/tz.mbn
-		#fix selinux
-		sed -i '4asetenforce 0' $(ZIP_DIR)/system/bin/sysinit
-		#fix mdnsd
-		-mv -f $(ZIP_DIR)/system/bin/mdnsd $(ZIP_DIR)/system/bin/mdnsd_vendor
 		#fix stuck at "Sleep on..."
 		rm -rf $(ZIP_DIR)/system/bin/app_process_vendor
 		cp -rf stockrom/system/bin/app_process $(ZIP_DIR)/system/bin/app_process
