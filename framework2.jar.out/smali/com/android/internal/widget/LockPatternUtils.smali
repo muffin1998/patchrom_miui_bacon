@@ -1467,7 +1467,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, p1}, Lcom/android/internal/widget/LockPatternUtils;->patternToString(Ljava/util/List;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/android/internal/widget/LockPatternUtils;->patternToString(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -3342,7 +3342,7 @@
     goto :goto_0
 .end method
 
-.method public patternToString(Ljava/util/List;)Ljava/lang/String;
+.method public static patternToString(Ljava/util/List;)Ljava/lang/String;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3357,8 +3357,8 @@
 
     .prologue
     .line 802
-    .local p1, "pattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
-    if-nez p1, :cond_0
+    .local p0, "pattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
+    if-nez p0, :cond_0
 
     .line 803
     const-string v4, ""
@@ -3369,7 +3369,7 @@
 
     .line 805
     :cond_0
-    invoke-interface {p1}, Ljava/util/List;->size()I
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v2
 
@@ -3386,7 +3386,7 @@
     if-ge v1, v2, :cond_1
 
     .line 809
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -3398,11 +3398,7 @@
 
     move-result v4
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternUtils;->getLockPatternSize()B
-
-    move-result v5
-
-    mul-int/2addr v4, v5
+    mul-int/lit8 v4, v4, 0x3
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternView$Cell;->getColumn()I
 
@@ -4260,7 +4256,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, p1}, Lcom/android/internal/widget/LockPatternUtils;->patternToString(Ljava/util/List;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/android/internal/widget/LockPatternUtils;->patternToString(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v2
 
