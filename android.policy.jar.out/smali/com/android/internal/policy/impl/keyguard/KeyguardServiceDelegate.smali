@@ -81,7 +81,10 @@
 
     .line 113
     .local v0, "intent":Landroid/content/Intent;
-    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    const-string v3, "com.android.keyguard"
+
+    const-string v4, "com.android.keyguard.KeyguardService"
+    invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 114
     invoke-static {p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;->createScrim(Landroid/content/Context;)Landroid/view/View;
@@ -103,9 +106,23 @@
 
     if-nez v3, :cond_0
 
-    .line 121
-    :cond_0
+    const-string v3, "KeyguardServiceDelegate"
+
+    const-string v4, "*** Keyguard: can\'t bind to com.android.keyguard.KeyguardService"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_0
     return-void
+
+    :cond_0
+    const-string v3, "KeyguardServiceDelegate"
+
+    const-string v4, "*** Keyguard started"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
 .end method
 
 .method static synthetic access$000(Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;)Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate$KeyguardState;
