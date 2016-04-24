@@ -1,4 +1,4 @@
-                            ptchrom miui for bacon base on cm11-XNF9XBS28K
+#ptchrom miui for bacon base on cm11-XNF9XBS28K
 ===================================================================================================
 NOTE:THIS IS A TEST PROJECT AND NOT STABLE FOR DAILY USE<br />
 Bugs:<br />
@@ -6,7 +6,7 @@ Bugs:<br />
 <br />
 <br />
 <br />
-To build a rom , do this:
+##To build a rom , do this:
 ==========================
 1. Setup Develop Enviroment. <br />
 2. Repo the patchrom project from MiCode.<br />
