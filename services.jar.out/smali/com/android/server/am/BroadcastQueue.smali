@@ -5805,6 +5805,25 @@
     .line 924
     .end local v16    # "e":Landroid/os/RemoteException;
     :cond_20
+    move-object/from16 v0, p0
+	
+    move-object/from16 v1, v32
+
+    move-object/from16 v2, v20
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/server/am/BroadcastQueue;->checkApplicationAutoStart(Lcom/android/server/am/BroadcastRecord;Landroid/content/pm/ResolveInfo;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_miui_0
+    
+    monitor-exit v38
+    
+    return-void
+
+    :cond_miui_0
+    move-object/from16 v0, p0
+	
     const-string v3, "sys.quickboot.enable"
 
     const/4 v5, 0x0
@@ -5846,23 +5865,6 @@
     if-eqz v3, :cond_22
 
     :cond_21
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v32
-
-    move-object/from16 v2, v20
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/server/am/BroadcastQueue;->checkApplicationAutoStart(Lcom/android/server/am/BroadcastRecord;Landroid/content/pm/ResolveInfo;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_miui_0
-    
-    monitor-exit v38
-    
-    return-void
-
-    :cond_miui_0
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/am/BroadcastQueue;->mService:Lcom/android/server/am/ActivityManagerService;
